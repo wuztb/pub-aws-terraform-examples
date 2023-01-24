@@ -21,6 +21,9 @@ variable "amis" {
 
 # Create an EC2 instance
 resource "aws_instance" "example" {
-  ami           = var.amis[var.region].ami
-  instance_type = "t2.micro"
+    ami           = var.amis[var.region].ami
+    instance_type = "t2.micro"
+    tags = {
+        Name = var.name
+    }
 }

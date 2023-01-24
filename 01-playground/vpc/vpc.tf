@@ -7,7 +7,7 @@ resource "aws_vpc" "vpc-01" {
     cidr_block = "10.0.0.0/20"
     enable_dns_support = true #gives you an internal domain name
     enable_dns_hostnames = true #gives you an internal host name
-    tags {
+    tags = {
         Name = "vpc-01"
     }
 }
@@ -16,14 +16,14 @@ resource "aws_subnet" "subnet-public-01" {
     vpc_id = "${aws_vpc.vpc-01.id}"
     cidr_block = "10.0.1.0/24"
     map_public_ip_on_launch = true //it makes this a public subnet
-    tags {
+    tags = {
         Name = "subnet-public-1"
     }
 }
 
 resource "aws_internet_gateway" "igw-01" {
     vpc_id = "${aws_vpc.vpc-01.id}"
-    tags {
+    tags = {
         Name = "igw-01"
     }
 }
@@ -38,7 +38,7 @@ resource "aws_route_table" "rt-public" {
         gateway_id = "${aws_internet_gateway.igw-01.id}" 
     }
     
-    tags {
+    tags = {
         Name = "rt-public"
     }
 }
@@ -74,7 +74,7 @@ resource "aws_security_group" "secgroup-01" {
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
-    tags {
+    tags = {
         Name = "secgroup-01"
     }
 }

@@ -7,8 +7,9 @@ https://github.com/hashicorp/learn-terraform-deploy-nginx-kubernetes-provider/bl
 Current thinking is
 1) Launch cloud guru sandbox.
 2) Launch manually cloud9 environment, attach admin instance role.
-3) Install required apps (refer to setup-cloud9.sh).
+3) Install required apps and update aws cli (refer to setup-cloud9.sh).
 4) Init terraform and nginx
+5) Configure kubectl aws eks update-kubeconfig --region us-east-1 --name <cluster-name>
 
 Challenges:
 1) Unfortinately automated creation of cloud9 env not fully supported yet.

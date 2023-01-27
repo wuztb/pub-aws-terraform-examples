@@ -7,7 +7,16 @@ At the moment still only cloud9.sh with terraform working.
 2) ./cloud9.sh
 3) Open Cloud9 manually and run the setup-cloud9sh commands
 
-Not working 
+
+aws --version
+aws sts get-caller-identity
+kubectl version
+aws eks update-kubeconfig --name education-eks-PVnskvi3
+
+ ==== Archive ===== 
+aws eks --region region update-kubeconfig --name cluster_name
+
+
 aws cloud9 list-environments does not include Environments[name]
 environment_id=$(aws cloud9 list-environments \
   --query 'Environments[?Name==`MyCloud9Environment`].Id' \

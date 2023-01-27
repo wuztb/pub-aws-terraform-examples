@@ -11,7 +11,7 @@ At the moment still only cloud9.sh with terraform working.
 aws --version
 aws sts get-caller-identity
 kubectl version
-aws eks update-kubeconfig --name education-eks-PVnskvi3
+aws eks update-kubeconfig --region us-east-1 --name education-eks-2Ub2zOiH
 
  ==== Archive ===== 
 aws eks --region region update-kubeconfig --name cluster_name
